@@ -50,16 +50,16 @@ export const updatePost = (id, updatedPost) => async (dispatch) => {
 export const addVote = (id, vote) => async (dispatch) => {
     // console.log('heloo',updatedPost)
     console.log(vote)
-    // try {
-    //     await api.addVote(id, vote)
-    //     const response = await api.getData()
-    //     console.log(response)
-    //     dispatch({ type: ADD_VOTE , payload: response.data.data })
-    // }
+    try {
+        await api.addVote(id, vote)
+        const response = await api.getData()
+        console.log(response)
+        dispatch({ type: ADD_VOTE , payload: response.data.data })
+    }
 
-    // catch (error) {
-    //     console.log(error)
-    // }
+    catch (error) {
+        console.log(error)
+    }
 }
 
 

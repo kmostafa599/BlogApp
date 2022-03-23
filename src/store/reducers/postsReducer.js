@@ -7,20 +7,7 @@ const  postsReducer=(state =[], action)=>{
         case ADD_POST:
         case EDIT_POST:
         case DELETE_POST:
-
             return action.payload
-            // state.postsData.map(post => {
-            //     if(+post.id !==+action.payload.id){
-            //         return post  
-            //     }   
-            //   return {
-            //       ...post,title:action.payload.value
-            //   }
-            // }) 
-            // const posts = state.postsData.filter(post => (+post.id!==+action.payload))
-            // return posts
-        //case ADD_VOTE:
-        //    return 
         default:
             return state
     }

@@ -26,9 +26,7 @@ export default function PostForm({setOpen,open}) {
       title:"",
       userId:3,
       body:"",
-      comments:{
-
-      },
+      comments:[],
       votes:[],
       
     },

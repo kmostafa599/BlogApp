@@ -64,6 +64,12 @@ export default function PostView({ data }) {
         console.log(post)
         // setValue(returnedPost.title)
     }, [])
+    useEffect(() => {
+      
+        console.log(post)
+        // setValue(returnedPost.title)
+    }, [post])
+    
 
 
     const classes = useStyles()
@@ -81,7 +87,7 @@ export default function PostView({ data }) {
         dispatch(updatePost(id, formik.values))
     }
     const handleVote = (userVote,userId) => {
-        dispatch(addVote(id, {  userId, userVote }))
+        dispatch(addVote(id, {   userVote, userId }))
     }
 
 
@@ -104,11 +110,9 @@ export default function PostView({ data }) {
                         {
                             edit ?
                                 (<div style={{ display: "flex" }} >
-                                    <input value={formik.values.title} onChange={formik.handleChange} className='m-2' type='text' />
+                                    <input id="title" value={formik.values.title} onChange={formik.handleChange} className='m-2' type='text' />
                                     <Button className='btn btn-primary' style={{ display: "flex", borderRadius: "35px" }} onClick={() => {
                                         setEdit(false)
-
-                                        // post.title = formik.values.title
                                         handleEdit()
 
                                     }}>Save</Button>
@@ -124,7 +128,7 @@ export default function PostView({ data }) {
                             {post.userId}
                         </Typography>
 
-                        <Typography variant="body2" color="textSecondary">
+                        <Typography variant="body" color="textSecondary">
                             {post.body}
                         </Typography>
                     </CardContent>
